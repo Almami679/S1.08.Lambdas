@@ -8,9 +8,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String [] nombresSinArray = {"Albert", "Irene", "Maria", "Carles", "Xavi", "Joan", "Antonio"};
 
-        ArrayList<String> nombres = new ArrayList<>(Arrays.asList(nombresSinArray));
+        ArrayList<String> nombres = new ArrayList<>(Arrays.asList
+                ("Albert", "Irene", "Maria", "Carles", "Xavi", "Joan", "Antonio"));
+
         nombres.forEach( (nom) -> {if(nom.toLowerCase().contains("o")) System.out.println(nom);});
 
 
