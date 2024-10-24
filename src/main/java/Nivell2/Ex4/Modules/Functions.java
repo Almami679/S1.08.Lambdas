@@ -13,13 +13,8 @@ public class Functions {
     }
 
     public static void firstWithE(ArrayList<String> list) {
-        list.sort((string1, string2) -> {
-            boolean string1bol = string1.toLowerCase().contains("e");
-            boolean string2bol = string2.toLowerCase().contains("e");
-            if(string1bol && string2bol){return -1;}
-            else if(!string1bol && string2bol){return 1;}
-            else{return 0;}
-        });
+        list.sort((string1, string2) -> Boolean.compare(string2.toLowerCase().contains("e")
+                                                            , string1.toLowerCase().contains("e")));
     }
 
     public static void replaceA(ArrayList<String> list) {

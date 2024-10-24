@@ -4,6 +4,6 @@ import java.util.ArrayList;
 
 @FunctionalInterface
 public interface Sort {
-
+//cambiar noombre
     String printed(ArrayList<Integer> list);
 }

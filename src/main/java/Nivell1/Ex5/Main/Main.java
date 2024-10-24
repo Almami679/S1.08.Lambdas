@@ -9,7 +9,6 @@ public class Main {
         PiValue number = () -> 3.1415;
 
         System.out.println("El valor de Pi es: " + number.getPiValue());
-        System.out.println("r".getClass());
 
     }
 }

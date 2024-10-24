@@ -2,8 +2,7 @@ package Nivell2.Ex3.Modules;
 
 import java.util.InputMismatchException;
 
-import static Nivell2.Ex3.Main.Main.input;
-import static Nivell2.Ex3.Main.Main.operations;
+import static Nivell2.Ex3.Main.Main.*;
 
 public class Input {
     public static final String scrn = "+-----------------------------+";
@@ -18,7 +17,7 @@ public class Input {
         float n = -1;
         do {
             try {
-                n = input.nextFloat();
+                n = INPUT.nextFloat();
             } catch (InputMismatchException e) {
                 System.out.println("Invalid format");
             }
@@ -29,9 +28,9 @@ public class Input {
     public static String askOperation() {
         String operand = "";
         do {
-            operand = input.next();
+            operand = INPUT.next();
             System.out.println("Invalid Operation");
-        } while(!operations.contains(operand));
+        } while(!OPERATIONS.contains(operand));
         return operand;
     }
 

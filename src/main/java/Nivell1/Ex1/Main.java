@@ -3,6 +3,7 @@ package Nivell1.Ex1;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
 
@@ -12,8 +13,8 @@ public class Main {
         ArrayList<String> nombres = new ArrayList<>(Arrays.asList
                 ("Albert", "Irene", "Maria", "Carles", "Xavi", "Joan", "Antonio"));
 
-        nombres.forEach( (nom) -> {if(nom.toLowerCase().contains("o")) System.out.println(nom);});
 
-
+        List<String> namesWithO = nombres.stream().filter((name) -> name.toLowerCase().contains("o")).toList();
+        namesWithO.forEach(System.out::println);
     }
 }

@@ -1,7 +1,9 @@
 package Nivell1.Ex2;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.List;
+
+import static java.util.Arrays.asList;
 
 public class Main {
 
@@ -9,12 +11,13 @@ public class Main {
 
         ArrayList<String> filter = new ArrayList<>();
 
-        String [] nombresSinArray = {"Albert", "Irene", "Maria", "Carles", "Xavi", "Joan", "Antonio"};
+        ArrayList<String> nombres = new ArrayList<>(asList("Albert", "Irene", "Maria", "Carles"
+                , "Xavi", "Joan", "Antonio"));
 
-        ArrayList<String> nombres = new ArrayList<>(Arrays.asList(nombresSinArray));
-        nombres.forEach( (nom) -> {if(nom.toLowerCase().contains("o") && nom.length()>5)
-                                filter.add(nom);});
-        filter.forEach((nom) -> System.out.println(nom));
+        List<String> nombres2 = nombres.stream().filter((name) ->
+                                    name.toLowerCase().contains("o") && name.length()>5).toList();
+
+        nombres2.forEach(System.out::println);
 
 
     }

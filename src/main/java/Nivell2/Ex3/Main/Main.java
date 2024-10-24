@@ -1,5 +1,6 @@
 package Nivell2.Ex3.Main;
 
+
 import Nivell2.Ex3.Modules.Calculator;
 
 import java.util.ArrayList;
@@ -11,12 +12,12 @@ import static Nivell2.Ex3.Modules.Input.*;
 
 public class Main {
 
-    public static final Scanner input = new Scanner(System.in);
-    static final Calculator sum = (float x, float y) -> {return x+y;};
-    static final Calculator rest = (float x, float y) -> {return x-y;};
-    static final Calculator mult = (float x, float y) -> {return x*y;};
-    static final Calculator div = (float x, float y) -> {return x/y;};
-    public static final ArrayList<String> operations = new ArrayList<>(Arrays.asList("+", "*", "/", "-"));
+    public static final Scanner INPUT = new Scanner(System.in);
+    static final Calculator SUM = Float::sum;
+    static final Calculator REST = (float x, float y) -> x-y;
+    static final Calculator MULT = (float x, float y) -> x*y;
+    static final Calculator DIV = (float x, float y) -> x/y;
+    public static final ArrayList<String> OPERATIONS = new ArrayList<>(Arrays.asList("+", "*", "/", "-"));
 
     public static void main(String[] args) {
 
@@ -36,14 +37,14 @@ public class Main {
             n2 = askNumber();
 
 
-            if (operand.equals(operations.getFirst())) {
-                result = sum.result(n1, n2);
-            } else if (operand.equals(operations.get(1))) {
-                result = mult.result(n1, n2);
-            } else if (operand.equals(operations.get(2))) {
-                result = div.result(n1, n2);
+            if (operand.equals(OPERATIONS.getFirst())) {
+                result = SUM.result(n1, n2);
+            } else if (operand.equals(OPERATIONS.get(1))) {
+                result = MULT.result(n1, n2);
+            } else if (operand.equals(OPERATIONS.get(2))) {
+                result = DIV.result(n1, n2);
             } else {
-                result = mult.result(n1, n2);
+                result = REST.result(n1, n2);
             }
         printScreenInfo(n1, operand, n2, result);
 

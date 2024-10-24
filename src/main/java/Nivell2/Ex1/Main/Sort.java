@@ -1,4 +1,4 @@
-package Nivell2.Ex1.Modules;
+package Nivell2.Ex1.Main;
 
 import java.util.ArrayList;
 
